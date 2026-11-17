@@ -45,4 +45,4 @@ Modify the channel values of the selected vector by holding down the correspondi
 Ensure that `main.cpp` and `shader.fs` are located in the same directory, then compile using the terminal command:
 
 ```bash
-g++ main.cpp -o shader_app -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
+g++ main.cpp -o main -lraylib && ./main
