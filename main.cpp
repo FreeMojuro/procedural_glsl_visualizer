@@ -85,7 +85,11 @@ int main(){
             if(IsKeyPressed(KEY_L))ismouseon = !ismouseon;
             if(ismouseon){
                 Vector2 mousepos = GetMousePosition();
-                SetShaderValue(shader, mouseLoc, &mousepos, SHADER_UNIFORM_VEC2);
+                Vector2 normalizedMouse = {
+                    (mousepos.x / window_width) * 2.0f - 1.0f,
+                    -((mousepos.y / window_height) * 2.0f - 1.0f)
+                };
+                SetShaderValue(shader, mouseLoc, &normalizedMouse, SHADER_UNIFORM_VEC2);
             }
 
             if(showcolors){
